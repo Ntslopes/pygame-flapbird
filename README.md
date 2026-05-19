@@ -1,6 +1,6 @@
 # Documentação do Projeto — Flappy Bird Superman
 
-# Integrantes do Grupo
+## Integrantes do Grupo
 
 Esther dos Santos de Almeida Tozzo | RM: 570860
 
@@ -14,7 +14,7 @@ Matheus Lopes Lima | RM: 571458
 
 ---
 
-# Descrição do Projeto
+## Descrição do Projeto
 
 O projeto consiste em uma recriação do jogo Flappy Bird utilizando a biblioteca Pygame em Python.
 
@@ -29,7 +29,7 @@ O objetivo do jogador é desviar dos obstáculos e alcançar a maior pontuação
 
 ---
 
-# Objetivos do Projeto
+## Objetivos do Projeto
 
 O projeto teve como principais objetivos:
 
@@ -42,19 +42,19 @@ O projeto teve como principais objetivos:
 
 ---
 
-# Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
-## Linguagem
+### Linguagem
 
 * Python 3
 
-## Biblioteca
+### Biblioteca
 
 * Pygame
 
 ---
 
-# Estrutura do Projeto
+## Estrutura do Projeto
 
 ```txt id="p3g5op"
 pygame-flapbird/
@@ -68,7 +68,7 @@ pygame-flapbird/
 
 ---
 
-# Funcionamento Geral
+## Funcionamento Geral
 
 O jogo utiliza o conceito de game loop, responsável por:
 
@@ -80,7 +80,7 @@ O loop principal executa continuamente enquanto o jogo estiver aberto.
 
 ---
 
-# Configuração Inicial
+## Configuração Inicial
 
 O programa inicia importando as bibliotecas necessárias:
 
@@ -108,7 +108,7 @@ Também são definidas:
 
 ---
 
-# Sistema de Sprites
+## Sistema de Sprites
 
 O jogo utiliza imagens PNG para representar:
 
@@ -126,11 +126,11 @@ Isso permite maior flexibilidade na organização dos assets.
 
 ---
 
-# Sistema de Física
+## Sistema de Física
 
 O movimento do Superman utiliza gravidade e impulso vertical.
 
-## Gravidade
+### Gravidade
 
 v_y = v_y + g
 
@@ -138,7 +138,7 @@ A gravidade aumenta gradualmente a velocidade vertical do personagem.
 
 ---
 
-## Impulso de voo
+### Impulso de voo
 
 Quando o jogador pressiona:
 
@@ -157,7 +157,7 @@ Esse impulso faz o Superman subir na tela.
 
 ---
 
-# Sistema de Obstáculos
+## Sistema de Obstáculos
 
 Os obstáculos são gerados automaticamente em intervalos regulares.
 
@@ -173,7 +173,7 @@ x = x - v
 
 ---
 
-# Sistema de Colisão
+## Sistema de Colisão
 
 O jogo utiliza hitboxes retangulares através da classe:
 
@@ -194,7 +194,7 @@ Quando ocorre colisão:
 
 ---
 
-# Sistema de Partículas
+## Sistema de Partículas
 
 A classe `Particula` foi criada para gerar efeitos visuais após colisões.
 
@@ -214,21 +214,21 @@ As partículas simulam uma explosão visual ao perder o jogo.
 
 O jogo possui três estados principais:
 
-## Menu
+### Menu
 
 Tela inicial aguardando o jogador iniciar.
 
-## Jogando
+### Jogando
 
 Estado principal da gameplay.
 
-## Morto
+### Morto
 
 Estado exibido após colisão.
 
 ---
 
-# Sistema de Pontuação
+## Sistema de Pontuação
 
 A pontuação aumenta quando o jogador ultrapassa um obstáculo com sucesso.
 
@@ -240,7 +240,7 @@ Também existe um sistema de recorde armazenado durante a execução do jogo.
 
 ---
 
-# Sistema de Animação
+## Sistema de Animação
 
 O Superman rotaciona dinamicamente conforme sua velocidade vertical.
 
@@ -258,7 +258,7 @@ O ângulo é calculado usando:
 
 ---
 
-# Interface do Usuário
+## Interface do Usuário
 
 O jogo exibe mensagens centralizadas utilizando a função:
 
@@ -275,7 +275,7 @@ Também foi implementada sombra no texto para melhorar a legibilidade.
 
 ---
 
-# Principais Conceitos Aplicados
+## Principais Conceitos Aplicados
 
 Durante o desenvolvimento foram utilizados conceitos importantes de programação:
 
@@ -295,7 +295,7 @@ Durante o desenvolvimento foram utilizados conceitos importantes de programaçã
 
 ---
 
-# Conclusão
+## Conclusão
 
 O projeto permitiu desenvolver conhecimentos fundamentais sobre desenvolvimento de jogos utilizando Python e Pygame.
 
