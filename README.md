@@ -1,7 +1,5 @@
 # Documentação do Projeto — Flappy Bird Superman
 
----
-
 # Integrantes do Grupo
 
 Esther dos Santos de Almeida Tozzo | RM: 570860
