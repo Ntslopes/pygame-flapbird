@@ -210,7 +210,7 @@ As partículas simulam uma explosão visual ao perder o jogo.
 
 ---
 
-# Estados do Jogo
+## Estados do Jogo
 
 O jogo possui três estados principais:
 
