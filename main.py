@@ -34,7 +34,7 @@ def carregar_sprite(nome_arquivo):
     )
 
 try:
-    surf_passaro      = pygame.transform.scale(carregar_sprite("superman.png"), (50, 38))
+    surf_passaro      = pygame.transform.scale(carregar_sprite("superman.png"), (100, 62))
     surf_k_full       = carregar_sprite("kriptonita.png")
     surf_kriptonita   = surf_k_full.subsurface(surf_k_full.get_bounding_rect()).copy()
     surf_fundo        = pygame.transform.scale(carregar_sprite("metropolis.png"), (LARGURA, ALTURA))
