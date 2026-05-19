@@ -257,12 +257,23 @@ while rodando:
         tela.blit(fl, (0, 0))
 
     if estado["estado"] == "menu":
-        desenhar_texto_centralizado(tela, "Pressione ESPACO para iniciar",
-                         fonte_pequena, (255, 255, 255), ALTURA // 2 - 12, sombra=False)
-
-    elif estado["estado"] == "morto" and estado["timer_morte"] > 40:
-        desenhar_texto_centralizado(tela, "Pressione ESPAÇO para reiniciar",
-                         fonte_pequena, (255, 255, 255), ALTURA // 2 - 12)
+        desenhar_texto_centralizado(tela, "SUPER BIRD",
+                         fonte_media, DESTAQUE_UI, ALTURA // 2 - 80)
+        desenhar_texto_centralizado(tela, "Pressione ESPAÇO para iniciar",
+                         fonte_pequena, (255, 255, 255), ALTURA // 2 + 40)
+    elif estado["estado"] == "jogando":
+        desenhar_texto_centralizado(tela, str(estado["pontuacao"]),
+                         fonte_media, (255, 255, 255), 50)
+    elif estado["estado"] == "morto":
+        desenhar_texto_centralizado(tela, str(estado["pontuacao"]),
+                         fonte_media, (255, 255, 255), 50)
+        if estado["timer_morte"] > 40:
+            desenhar_texto_centralizado(tela, "GAME OVER",
+                             fonte_media, (255, 50, 50), ALTURA // 2 - 60)
+            desenhar_texto_centralizado(tela, "Pressione ESPAÇO para reiniciar",
+                             fonte_pequena, (255, 255, 255), ALTURA // 2)
+            desenhar_texto_centralizado(tela, f'Recorde: {recorde_geral}',
+                             fonte_pequena, DESTAQUE_UI, ALTURA // 2 + 40)
 
     pygame.display.flip()
 
