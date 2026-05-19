@@ -14,6 +14,7 @@ Matheus Lopes Lima | RM: 571458
 
 ---
 
+
 ## Descrição do Projeto
 
 O projeto consiste em uma recriação do jogo Flappy Bird utilizando a biblioteca Pygame em Python.
@@ -29,6 +30,7 @@ O objetivo do jogador é desviar dos obstáculos e alcançar a maior pontuação
 
 ---
 
+
 ## Objetivos do Projeto
 
 O projeto teve como principais objetivos:
@@ -42,6 +44,7 @@ O projeto teve como principais objetivos:
 
 ---
 
+
 ## Tecnologias Utilizadas
 
 ### Linguagem
@@ -53,6 +56,7 @@ O projeto teve como principais objetivos:
 * Pygame
 
 ---
+
 
 ## Estrutura do Projeto
 
@@ -68,6 +72,7 @@ pygame-flapbird/
 
 ---
 
+
 ## Funcionamento Geral
 
 O jogo utiliza o conceito de game loop, responsável por:
@@ -79,6 +84,7 @@ O jogo utiliza o conceito de game loop, responsável por:
 O loop principal executa continuamente enquanto o jogo estiver aberto.
 
 ---
+
 
 ## Configuração Inicial
 
@@ -108,6 +114,7 @@ Também são definidas:
 
 ---
 
+
 ## Sistema de Sprites
 
 O jogo utiliza imagens PNG para representar:
@@ -126,6 +133,7 @@ Isso permite maior flexibilidade na organização dos assets.
 
 ---
 
+
 ## Sistema de Física
 
 O movimento do Superman utiliza gravidade e impulso vertical.
@@ -137,6 +145,7 @@ v_y = v_y + g
 A gravidade aumenta gradualmente a velocidade vertical do personagem.
 
 ---
+
 
 ### Impulso de voo
 
@@ -157,6 +166,7 @@ Esse impulso faz o Superman subir na tela.
 
 ---
 
+
 ## Sistema de Obstáculos
 
 Os obstáculos são gerados automaticamente em intervalos regulares.
@@ -172,6 +182,7 @@ As kriptonitas se movimentam constantemente para a esquerda:
 x = x - v
 
 ---
+
 
 ## Sistema de Colisão
 
@@ -194,6 +205,7 @@ Quando ocorre colisão:
 
 ---
 
+
 ## Sistema de Partículas
 
 A classe `Particula` foi criada para gerar efeitos visuais após colisões.
@@ -209,6 +221,7 @@ Cada partícula possui:
 As partículas simulam uma explosão visual ao perder o jogo.
 
 ---
+
 
 ## Estados do Jogo
 
@@ -228,6 +241,7 @@ Estado exibido após colisão.
 
 ---
 
+
 ## Sistema de Pontuação
 
 A pontuação aumenta quando o jogador ultrapassa um obstáculo com sucesso.
@@ -239,6 +253,7 @@ estado["pontuacao"] += 1
 Também existe um sistema de recorde armazenado durante a execução do jogo.
 
 ---
+
 
 ## Sistema de Animação
 
@@ -258,6 +273,7 @@ O ângulo é calculado usando:
 
 ---
 
+
 ## Interface do Usuário
 
 O jogo exibe mensagens centralizadas utilizando a função:
@@ -274,6 +290,7 @@ As mensagens incluem:
 Também foi implementada sombra no texto para melhorar a legibilidade.
 
 ---
+
 
 ## Principais Conceitos Aplicados
 
@@ -294,6 +311,7 @@ Durante o desenvolvimento foram utilizados conceitos importantes de programaçã
 * eventos de teclado e mouse.
 
 ---
+
 
 ## Conclusão
 
