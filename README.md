@@ -1,4 +1,4 @@
-# Documentação do Projeto — Flappy Bird Superman
+# Documentação do Projeto — SuperBird
 
 ## Integrantes do Grupo
 
