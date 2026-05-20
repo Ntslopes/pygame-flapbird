@@ -77,10 +77,14 @@ def desenhar_cano(superficie, x, altura_topo, y_base):
 #partículas de morte
 class Particula:
     def __init__(self, x, y):
+
+        #posições e velocidades aleatórias
         self.x     = x + random.randint(-10, 10)
         self.y     = y + random.randint(-10, 10)
         self.vx    = random.uniform(-3, 3)
         self.vy    = random.uniform(-5, -1)
+
+        #vida e cor aleatórias
         self.vida  = random.randint(20, 40)
         self.vida_max = self.vida
         self.cor   = random.choice([(255, 210, 30), (255, 140, 0), (255, 255, 100)])
@@ -181,8 +185,10 @@ while rodando:
                 if estado["estado"] == "menu":
                     estado["estado"] = "jogando"
                     estado["vel_y"] = VEL_PULO
+
                 elif estado["estado"] == "jogando":
                     estado["vel_y"] = VEL_PULO
+
                 elif estado["estado"] == "morto" and estado["timer_morte"] > 40:
                     recorde_geral = max(recorde_geral, estado["pontuacao"])
                     estado = reiniciar_jogo()
