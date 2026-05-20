@@ -22,7 +22,7 @@ fonte_media  = pygame.font.SysFont("Arial Rounded MT Bold", 36, bold=True)
 fonte_pequena = pygame.font.SysFont("Arial Rounded MT Bold", 24)
 DESTAQUE_UI  = (255, 200, 0)
 
-DIR_ASSETS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets")
+DIR_ASSETS = os.path.dirname(os.path.abspath(__file__))
 
 #carrega as sprites
 def carregar_sprite(nome_arquivo):
@@ -34,8 +34,9 @@ def carregar_sprite(nome_arquivo):
     raise FileNotFoundError(
         f"Sprite '{nome_arquivo}' não encontrado.\n"
         f"Coloque os arquivos superman.png, kriptonita.png e metropolis.png\n"
-        f"na mesma pasta do jogo ou em uma subpasta 'assets/'."
+        f"na mesma pasta do jogo."
     )
+    
 #tamanho e posição das sprites e verificação das sprites
 try:
     surf_passaro      = pygame.transform.scale(carregar_sprite("superman.png"), (100, 62))
@@ -215,21 +216,26 @@ while rodando:
         #movimenta os canos
         for c in estado["canos"]:
             c["x"] -= VEL_CANO
+
             #conta a pontuação
             if not c["pontuou"] and c["x"] + LARG_CANO < estado["x_passaro"]:
                 c["pontuou"] = True
                 estado["pontuacao"] += 1
+
         #remove os canos que sairam da tela
         estado["canos"] = [c for c in estado["canos"] if c["x"] > -120]
 
         #detecta colisões
         br   = hitbox_passaro(estado["x_passaro"], estado["y_passaro"])
         bateu = estado["y_passaro"] + ALT_PASSARO // 2 >= Y_CHAO
+
         #colisão com o teto
         if estado["y_passaro"] - ALT_PASSARO // 2 < 0:
             bateu = True
+
         #colisão com os canos
         for c in estado["canos"]:
+
             #hitbox dos canos
             r1, r2 = hitboxes_cano(c["x"], c["topo"], c["base"])
             if br.colliderect(r1) or br.colliderect(r2):
@@ -257,20 +263,25 @@ while rodando:
             estado["y_passaro"] + estado["vel_y"],
             Y_CHAO - ALT_PASSARO // 2,
         )
+
         #atualiza as partículas
         estado["particulas"] = [p for p in estado["particulas"] if p.vida > 0]
         for p in estado["particulas"]:
             p.atualizar()
         if estado["flash"] > 0:
             estado["flash"] -= 1
+
     #desenha o fundo
     tela.blit(surf_fundo, (0, 0))
+
     #desenha os canos
     for c in estado["canos"]:
         desenhar_cano(tela, c["x"], c["topo"], c["base"])
+
     #desenha as particulas
     for p in estado["particulas"]:
         p.desenhar(tela)
+
     #define o angulo do passaro
     if estado["estado"] == "jogando":
         angulo = max(-30, min(45, estado["vel_y"] * 3))
@@ -278,9 +289,11 @@ while rodando:
         angulo = 90
     else:
         angulo = math.sin(quadro * 0.05) * 10
+
     #rotaciona o passaro
     passaro_rotacionado = pygame.transform.rotate(surf_passaro, -angulo)
     lp, ap = passaro_rotacionado.get_size()
+
     #desenha o passaro
     tela.blit(passaro_rotacionado,
               (int(estado["x_passaro"]) - lp // 2,
@@ -298,12 +311,15 @@ while rodando:
                          fonte_media, DESTAQUE_UI, ALTURA // 2 - 80)
         desenhar_texto_centralizado(tela, "Pressione ESPAÇO para iniciar",
                          fonte_pequena, (255, 255, 255), ALTURA // 2 + 40)
+
     elif estado["estado"] == "jogando":
         desenhar_texto_centralizado(tela, str(estado["pontuacao"]),
                          fonte_media, (255, 255, 255), 50)
+
     elif estado["estado"] == "morto":
         desenhar_texto_centralizado(tela, str(estado["pontuacao"]),
                          fonte_media, (255, 255, 255), 50)
+
         if estado["timer_morte"] > 40:
             desenhar_texto_centralizado(tela, "GAME OVER",
                              fonte_media, (255, 50, 50), ALTURA // 2 - 60)
@@ -311,6 +327,7 @@ while rodando:
                              fonte_pequena, (255, 255, 255), ALTURA // 2)
             desenhar_texto_centralizado(tela, f'Recorde: {recorde_geral}',
                              fonte_pequena, DESTAQUE_UI, ALTURA // 2 + 40)
+
     #atualiza a tela
     pygame.display.flip()
 
